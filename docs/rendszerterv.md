@@ -134,7 +134,7 @@ Szerver (Host) gép:
 
 
 ## 9. Adatbázis terv
-
+![alt text](image.png)
 
 ## 10. Implementációs terv
 A projekt két fő részre oszlik: a frontendre és a backendre.
