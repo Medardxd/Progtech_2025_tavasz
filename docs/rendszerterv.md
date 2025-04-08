@@ -124,6 +124,11 @@ Az alkalmazás indulását követően a felhasználónak be kell jelentkeznie a 
 ![dbterv](https://github.com/herbakmarcell/gambasim_progtech/assets/128597041/139356a1-df93-4e2a-9172-66dbd2bd8f31)
 
 ## 10. Implementációs terv
+A projekt két fő részre oszlik: a frontendre és a backendre.
+Frontend: A WPF technológiát használja, XAML alapú nézetekkel és MVVM architektúrával.
+Backend: A .NET keretrendszer segítségével készült adatkezelő réteg valósítja meg az adatbázis-műveleteket, beleértve az autók, bérlések, felhasználók kezelését.
+A forráskódban egységesen az angol nyelvet használjuk az osztály-, változó- és metódusnevekben.
+Az alkalmazás Visual Studio-ban fejleszthető és építhető.
 
 ## 11. Tesztterv
 
