@@ -94,14 +94,28 @@ Az alkalmazás indulását követően a felhasználónak be kell jelentkeznie a 
 ## 6. Fizikai környezet
 
 ### Vásárolt szoftverkomponensek, valamint esetleges külső rendszerek
+- A rendszer fejlesztéséhez és működéséhez nem szükségesek kereskedelmi szoftverkomponensek.
 
 ### Hardver topológia
+A rendszer működtetéséhez olyan számítógép szükséges, amely rendelkezik legalább az alábbiakkal:
+- Windows 10 vagy Windows 11 operációs rendszer
+- Legalább 4 GB RAM, ajánlott 8 GB
+- Legalább 1 GHz-es processzor, ajánlott 2+ magos CPU
+- Helyi hálózati vagy internetkapcsolat, ha a MySQL adatbázis távoli gépen fut
 
 ### Fizikai alrendszerek
+Kliens gépek:
+- Felhasználói oldalon Windows 10/11 operációs rendszerrel rendelkező számítógépek, amelyeken a WPF alkalmazás fut. A kliens közvetlenül kapcsolódik a szerver gépen elérhető MySQL adatbázishoz.
+
+Szerver (Host) gép:
+- A MySQL adatbázist kiszolgáló gép. Ez lehet egy különálló gép a hálózaton, vagy akár egy kliensgépen lokálisan futtatott adatbázis is. A szerver biztosítja az adatok központi tárolását és elérhetőségét.
 
 ### Fejlesztő eszközök
-
-
+- Visual Studio 2022 Community Edition – a WPF alkalmazás fejlesztésére
+- MySQL Workbench – az adatbázis tervezésére és kezelésére
+- MySQL Server – az adatbázis kiszolgálásához
+- MySQL Connector/NET – a WPF alkalmazás adatbáziskapcsolatához
+- Git + GitHub – verziókezeléshez
 
 ## 8. Architekturális terv
 
