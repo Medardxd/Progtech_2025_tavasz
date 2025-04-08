@@ -106,13 +106,17 @@ Az alkalmazás indulását követően a felhasználónak be kell jelentkeznie a 
 ## 8. Architekturális terv
 
 ### Webszerver
-
+- A rendszer nem igényel külön webszervert, mivel egy WPF alapú asztali alkalmazásról van szó.
 
 ### Adatbázis rendszer
-
+- MySQL alapú adatbázis rendszer, amelyhez az alkalmazás a MySQL Connector for .NET segítségével kapcsolódik.
 
 ### A program elérése, kezelése
+- A WPF-alapú asztali alkalmazás közvetlenül kapcsolódik a MySQL-adatbázishoz.
 
+- A fejlesztéshez Visual Studio és .NET 6 vagy újabb szükséges.
+
+- Az adatbázis eléréshez szükséges MySQL Connector és a megfelelő connection string konfigurálása.
 
 
 ## 9. Adatbázis terv
