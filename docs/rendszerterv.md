@@ -94,31 +94,25 @@ Az alkalmazás indulását követően a felhasználónak be kell jelentkeznie a 
 ## 6. Fizikai környezet
 
 ### Vásárolt szoftverkomponensek, valamint esetleges külső rendszerek
-Nincsenek vásárolt szoftverkomponensek.
+
 ### Hardver topológia
-Olyan számítógép alkalmas, amely Windows 10 vagy 11 operációs rendszerrel rendelkezik.
+
 ### Fizikai alrendszerek
-Kliens gépek: A követelményeknek megfelelő, Windows 10 vagy 11 operációs rendszerrel rendelkező PC-k.
-Szerver (Host) gép: Az adatbázis rendszer és a háttérfolyamatokat ellátó szolgáltatáshoz szükséges összetevők itt találhatóak. A kliens gép ezzel kommunikál.
+
 ### Fejlesztő eszközök
- - IntelliJ IDEA
- - Visual Studio Code
- - XAMPP (MySQL)
+
 
 
 ## 8. Architekturális terv
 
 ### Webszerver
 
--XAMPP.
 
 ### Adatbázis rendszer
 
-- MySQL alapú adatbázis rendszer.
 
 ### A program elérése, kezelése
 
-- Szükséges Swing, XAMPP, ami az installáció esetén egy szervergép.
 
 
 ## 9. Adatbázis terv
@@ -126,19 +120,9 @@ Szerver (Host) gép: Az adatbázis rendszer és a háttérfolyamatokat ellátó 
 ![dbterv](https://github.com/herbakmarcell/gambasim_progtech/assets/128597041/139356a1-df93-4e2a-9172-66dbd2bd8f31)
 
 ## 10. Implementációs terv
-A projektet két részre oszlik: a frontendre és a backendre. A frontend Java Swing segítségével készül, míg a backend Java keretrendszerben.
-A program kódjában használt nyelv elsősorban az angol.
-A szerver és az adatbázist összekötő csomag  felelős az adatbázis kezeléséért.
-Mind a frontend, mind a backend fejlesztéséhez szükség van a IntelliJ környezet telepítésére és konfigurálására a szükséges eszközökkel és kiegészítőkkel
-együtt.
+
 ## 11. Tesztterv
 
-A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata,
-ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
-A teszteléseket a fejlesztői csapat minden tagja elvégzi.
-Egy teszt eredményeit a tagok dokumentálják külön unit teszt függvényekbe és metódusokba tárolja.
-
-A tesztelés során a szoftver megfelelő működését vizsgáljuk. Amennyiben az elvártnak megfelelő eredményt kapunk, a teszt eset sikeresnek tekinthető, ellenkező esetben a hibát megpróbáljuk elhárítani, ha a teszt nem direkt nem sikerül.
 
 ### Tesztesetek
 
@@ -154,25 +138,9 @@ A tesztelés során a szoftver megfelelő működését vizsgáljuk. Amennyiben 
 ## 12. Telepítési terv
 
 **Fizikai telepítési terv**:
- - A felhasználónak szüksége van egy működő számítógépre, amely rendelkezik internet hozzáféréssel.
- - A szoftverünk működéséhez szükség van egy szerverre. A szervernek kapcsolódni kell egy hálózathoz, hogy elérhető legyen.
+
 
 **Szoftver telepítési terv**:
- - A felhasználónak szüksége van egy Windows 10 vagy 11 operációs rendszerre, amely támogatja a Java alkalmazásokat.
- - A szoftverünk futtatható Windows szerveren.
- - Szükség van valamilyen adatbázis szerverre, például MySQL:
-   - Szükséges telepíteni az XAMPP nevű szoftvert.
-   - Az adatbázis konfigurálása az XAMPP segítségével történik.
- - A backend és frontend konfigurálásához szükség van az  IntelliJ fejlesztői környezetre.
-   -  Szükséges csomagok a Java.
- - A fejlesztők számára az alkalmazás szabadon konfigurálható, fejleszthető.
- - Abban az esetben, ha a szükséges beállítások megtörténtek, a felhasználók számára az alkalmazás futtatható
+
 
 ## 13. Karbantartási terv
-Fontos ellenőrizni:
-*	Az alkalmazás megfelelően kezeli a kritikus információkat, azok nem elérhetők a megfelelő jogkör és felhasználói adatok nélkül. Ilyenek például a bejelentkezési adatok, és a felhasználók személyes adatai adatai.
-
-Figyelembe kell venni a felhasználó által jött visszajelzést is a programmal kapcsolatban.
-Ha hibát talált, mielőbb orvosolni kell, lehet az:
-*	Működéssel kapcsolatos
-*	Kinézet, dizájnnal kapcsolatos
