@@ -176,3 +176,10 @@ Fejlesztőknek:
 Az adatbázist előre létrehozott SQL szkriptek segítségével lehet inicializálni.
 
 ## 13. Karbantartási terv
+A felhasználók adatainak védelmét és jogosultságait biztonságos bejelentkezési mechanizmus biztosítja.
+Rendszeres adatbázis mentések javasoltak.
+A hibákat és visszajelzéseket a fejlesztői csapat dokumentálja, és azok alapján frissítéseket biztosít.
+A karbantartás során figyelembe vesszük:
+- Funkcionális hibák
+- Felhasználói élményt érintő hibák
+- Teljesítményproblémák
