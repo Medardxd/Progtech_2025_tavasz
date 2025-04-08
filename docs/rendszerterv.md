@@ -135,7 +135,6 @@ Szerver (Host) gép:
 
 ## 9. Adatbázis terv
 
-![dbterv](https://github.com/herbakmarcell/gambasim_progtech/assets/128597041/139356a1-df93-4e2a-9172-66dbd2bd8f31)
 
 ## 10. Implementációs terv
 A projekt két fő részre oszlik: a frontendre és a backendre.
@@ -163,9 +162,17 @@ Minden funkció külön tesztesetként valósul meg, lehetőség szerint xUnit/N
 ## 12. Telepítési terv
 
 **Fizikai telepítési terv**:
-
+- A felhasználónak szüksége van egy Windows 10 vagy újabb verziójú operációs rendszerrel rendelkező számítógépre.
+- A MySQL adatbázisszerver lehet helyi vagy távoli.
 
 **Szoftver telepítési terv**:
-
+A felhasználónak telepítenie kell a következőket:
+- .NET Desktop Runtime (6.0 vagy újabb)
+- A WPF-alkalmazás futtatható állománya
+Fejlesztőknek:
+- Visual Studio 2022+
+- MySQL for Visual Studio
+- MySQL Connector/NET
+Az adatbázist előre létrehozott SQL szkriptek segítségével lehet inicializálni.
 
 ## 13. Karbantartási terv
