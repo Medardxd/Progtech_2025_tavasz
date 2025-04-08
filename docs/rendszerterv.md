@@ -131,7 +131,8 @@ A forráskódban egységesen az angol nyelvet használjuk az osztály-, változ�
 Az alkalmazás Visual Studio-ban fejleszthető és építhető.
 
 ## 11. Tesztterv
-
+A rendszer funkcionalitásának ellenőrzése unit tesztek és manuális felhasználói tesztek segítségével történik.
+Minden funkció külön tesztesetként valósul meg, lehetőség szerint xUnit/NUnit tesztkörnyezetben.
 
 ### Tesztesetek
 
@@ -139,10 +140,11 @@ Az alkalmazás Visual Studio-ban fejleszthető és építhető.
 
  | Teszteset      | Elvárt eredmény                                                                                            | 
  |----------------|------------------------------------------------------------------------------------------------------------| 
- | Regisztráció   | A felhasználó az adatok megadásával sikeresen regisztrálni tud.                                            |
- | Bejelentkezés  | A felhasználó az adatok megadásával sikeresen be tud jelentkezni.                                          |
- | Tét megtétele  | Ha a felhasználó megfelelő mennyiségű egyenleggel rendelkezik, meg tudja tenni tétjét a megfelelő játékra. |
- | Játék indítása | A játék elindul, és az eredmény és felhasználó tippje alapján közli az eredményt.                          |
+ | Regisztráció   | A felhasználó megadott adatokkal sikeresen regisztrál a rendszerbe.                                        |
+ | Bejelentkezés  | A felhasználó helyes adatokkal be tud lépni.                                                               |
+ | Autó foglalása  | Ha az autó szabad és a felhasználó jogosult, a foglalás létrejön.                                         |
+ | Foglalás törlése | A felhasználó törölni tudja a saját aktív foglalását.                                                    |
+ | Autó hozzáadása | Új autó hozzáadása a rendszerhez                                                                          |
 
 ## 12. Telepítési terv
 
