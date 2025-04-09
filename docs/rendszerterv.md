@@ -36,26 +36,26 @@ A rendszer egy modern, digitális járműkereskedői megoldást kínál, amely s
 ## 3. Üzleti folyamatok modellje
 
 ### 3.1 Üzleti szereplők
-Az alkalmazás regisztráció vagy bejelentkezés után válik elérhetővé, bárki tud regiszrálni. Minden felhasználó ugyanolyan jogkörrel rendelkezik.
+Az alkalmazás használata regisztrációhoz kötött. A felhasználók kétféle jogosultsággal rendelkezhetnek:
+
+* Adminisztrátor: teljes hozzáféréssel rendelkezik az autók adatainak kezeléséhez (hozzáadás, szerkesztés, törlés), valamint vásárlás szimulálásához.
+
+* Felhasználó: megtekintheti az autók listáját és szimulált vásárlásokat hajthat végre, de nem módosíthatja a járművek adatait.
 
 ### 3.2 Üzleti folyamatok
-Az alkalmazás indulását követően a felhasználónak be kell jelentkeznie a funkciók eléréséhez.
+Az alkalmazás indulását követően a felhasználó bejelentkezik a megfelelő hitelesítő adatokkal. A bejelentkezés alapján eltérő funkciók válnak elérhetővé:
+- Adminisztrátorok által elérhető funkciók:
+     - Új autó hozzáadása (márka, modell, évjárat, ár megadásával).
+     - Meglévő autó adatainak módosítása (például ár vagy évjárat szerkesztése).
+     - Autó törlése a kínálatból.
+     - Vásárlási folyamat szimulálása.
+     - Eladott autók listájának megtekintése.
+- Felhasználók által elérhető funkciók:
+	- Autók listájának megtekintése (márka, modell, évjárat, ár adatokkal).
+	- Vásárlás szimulációja: autó kiválasztása és megvásárlása (az autó eltávolítása a kínálatból vagy áthelyezése eladott listára).
 - Általános folyamatok:
-     - Regisztrálni az oldalra a megfelelő adatok magadásával.
-     - Bejelentkezni az oldalra a regisztráció során megadott megfelelő adatokkal.
-     - Bármikor kilépni az alkalmazásból.
-     - Játék kiválasztása.
-- Pénzfeldobó játék folyamatok:
-	- Tét megtétele.
-	- Tipp módosítása.
-	- Legutóbbi dobások megtekintése.
-	- Tipp elfogadása és részvétel a "sorsolásban".
-- Kockadobó játék folyamatok:
-  - Tét megtétele.
-  - Páros/Páratlan számok tippelése.
-  - Kisebb, egyenlő mint 3 vagy nagyobb mint 3 számok tippelése.
-  - Pontos szám tippelése.
-  - Tipp elfogadása és részvétel a "sorsolásban".
+  - Bejelentkezés a rendszerbe a felhasználónév és jelszó megadásával.
+  - Kilépés az alkalmazásból.
 
 ## 4. Követelmények
 
