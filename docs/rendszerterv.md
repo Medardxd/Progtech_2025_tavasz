@@ -93,15 +93,36 @@ Az alkalmazás indulását követően a felhasználó bejelentkezik a megfelelő
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
- - Felhasználó
-   - Tétet tehet meg, és játszhat a játékmódokkal
- - "Gép"
-   - Sorsolja az eredményeket
+
+- **Adminisztrátor**
+  - Új autót adhat hozzá a kínálathoz.
+  - Módosíthatja a meglévő autók adatait.
+  - Törölhet autókat.
+  - Vásárlási folyamatot szimulálhat.
+  - Megtekintheti az eladott autók listáját.
+
+- **Felhasználó**
+  - Megtekintheti a kereskedésben elérhető autókat.
+  - Vásárlási folyamatot szimulálhat (autó megvásárlása).
 
 ### 5.2 Menühierarchiák
-- Főoldal (Bejelentkezés és Regisztráció)
-- Pénzfeldobó játék
-- Dobókocka játék
+
+- **Főoldal**
+  - Bejelentkezés (felhasználónév és jelszó megadása)
+  
+- **Autók listája**
+  - Autók adatainak megtekintése
+  
+- **Adminisztrátori funkciók** (csak admin számára elérhető)
+  - Új autó hozzáadása
+  - Meglévő autó szerkesztése
+  - Autó törlése
+  - Eladott autók megtekintése
+  
+- **Vásárlási folyamat**
+  - Autó kiválasztása a listából
+  - Vásárlás megerősítése
+
 
 ## 6. Fizikai környezet
 
