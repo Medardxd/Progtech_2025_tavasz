@@ -61,24 +61,34 @@ Az alkalmazás indulását követően a felhasználó bejelentkezik a megfelelő
 
 ### Funkcionális követelmények
 
-| ID | Megnevezés               | Leírás                                                                                                                                                                                   |
-|----|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| K1 | Bejelentkezési ablak     | A felhasználónak egyes funkciók elérése előtt azonosítania kell magát, mielőtt elérhetné azokat.                                                                                         |
-| K2 | Regisztráció             | A felhasználó itt tudja regisztrálni magát.                                                                                                                                              |
-| K3 | Játékmód választás       | A fehasználó kiválaszthatja, mely játékmódot szeretné játszani.                                                                                                                          |
-| K4 | Pénzfeldobó játék        | A pénzfeldobó játékban a felhasználó megteheti tétjét, hogy a szimulált pénzérme a feje vagy írása mutat felfelé, és az alapján kapja vissza megtett tétjét, amelyet tud módosítani is.  |
-| K5 | Kockadobó játék          | A kockadobó játékban a felhasználó megteheti tétjét, hogy a szimulált dobókocka különböző tulajdonságaira, és az alapján kapja vissza megtett tétjét, amelyet tud módosítani is.         |
- 
+| ID  | Megnevezés                | Leírás                                                                                                        |
+|-----|----------------------------|---------------------------------------------------------------------------------------------------------------|
+| K1  | Bejelentkezési felület      | A felhasználónak az alkalmazás elérése előtt azonosítania kell magát (felhasználónév és jelszó megadásával).   |
+| K2  | Autók megjelenítése         | A felhasználók megtekinthetik a kereskedésben elérhető autókat a részletes adatokkal (márka, modell, évjárat, ár). |
+| K3  | Új autó hozzáadása          | Az adminisztrátor új autókat adhat hozzá a kínálathoz az adatok megadásával.                                   |
+| K4  | Autó adatainak módosítása   | Az adminisztrátor módosíthatja a meglévő autók adatait (pl. ár, évjárat).                                       |
+| K5  | Autó törlése                | Az adminisztrátor törölhet autókat a rendszerből.                                                              |
+| K6  | Vásárlás szimulációja       | A felhasználók autókat vásárolhatnak szimulált módon, amely eltávolítja az autót a kínálatból vagy áthelyezi egy eladott listára. |
+| K7  | Eladott autók megtekintése  | Az adminisztrátor megtekintheti az eladott autók listáját.                                                     |
+
 ### Nemfunkcionális követelmények
 
-| ID | Megnevezés                             | Leírás                                                                                                              |
-|----|----------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| K6 | Átlátható, könnyen kezelhető felület   | A felületek könnyen használhatóak, átláthatóak legyenek, intuitívak, illetve ne legyenek zsúfoltak.                 |
-| K7 | Tervezési minták használata            | Az alkalmazás forráskódja tartalmazzon legalább 2 tervezési mintát. Mi esetünkben ez a Stratégia és a Command lesz. |
+| ID  | Megnevezés                          | Leírás                                                                                   |
+|-----|-------------------------------------|------------------------------------------------------------------------------------------|
+| N1  | Átlátható, könnyen kezelhető felület | A felületek intuitívak legyenek, a felhasználó könnyen eligazodjon az alkalmazásban.      |
+| N2  | Jogosultságkezelés                  | A rendszer különböztesse meg az adminisztrátorokat és a felhasználókat jogosultságok szerint. |
+| N3  | Tervezési minták használata         | Az alkalmazás kódja legalább három tervezési mintát tartalmazzon (Singleton, Factory, Observer). |
+| N4  | Stabilitás és hibakezelés           | Az alkalmazás megbízhatóan működjön, és megfelelően kezelje a hibás adatbeviteleket vagy egyéb hibákat. |
 
 ### Támogatott eszközök
 
- * Bármely Java alkalmazás futtatásra képes eszköz. Például otthoni számítógép, laptop, tablet. Preferáltabb Windows alapú rendszer.
+- Bármely Java alkalmazás futtatására alkalmas eszköz, például Windows operációs rendszerrel rendelkező számítógép.
+- Ajánlott minimum követelmények:
+  - Windows 10 vagy újabb operációs rendszer
+  - Legalább 4 GB RAM
+  - Legalább 1 GHz-es processzor
+- JavaFX támogatás szükséges a grafikus felület futtatásához.
+
 
 ## 5. Funkcionális terv
 
