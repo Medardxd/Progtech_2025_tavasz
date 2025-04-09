@@ -1,6 +1,7 @@
 # Rendszerterv
 ## 1. A rendszer célja
-Az alkalmazás célja egy változatos és szórakoztató szerencsejáték szimuláció biztosítása, amelyben a felhasználók különböző játékokat próbálhatnak ki. A fő cél az, hogy az alkalmazás vonzó alternatívát nyújtson a szerencsejáték függőséggel küzdők számára, segítve őket abban, hogy inkább biztonságos környezetben játszanak. A rendszer céljai közé tartozik továbbá a játékosok nyereség/veszteség arányának nyomon követése, az elemzések és statisztikák biztosítása a játékokról, valamint a felhasználói élmény folyamatos javítása és a felhasználói visszajelzések gyűjtése a fejlesztési folyamat során.
+Az alkalmazás célja egy egyszerűen kezelhető, grafikus felülettel rendelkező kocsi kereskedés szimulálása, amely lehetővé teszi a felhasználók számára, hogy megtekinthessék a kereskedésben elérhető autókat, új járműveket adhassanak hozzá, meglévő járműveket szerkeszthessenek vagy törölhessenek, valamint vásárlásokat szimulálhassanak.
+A rendszer egy modern, digitális járműkereskedői megoldást kínál, amely segíti a kisebb autókereskedéseket abban, hogy átláthatóan és hatékonyan kezelhessék kínálatukat.
 ## 2. Projektterv
 
 ### 2.1 Projektszerepkörök, felelőségek:
