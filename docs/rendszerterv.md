@@ -127,28 +127,37 @@ Az alkalmazás indulását követően a felhasználó bejelentkezik a megfelelő
 ## 6. Fizikai környezet
 
 ### Vásárolt szoftverkomponensek, valamint esetleges külső rendszerek
-- A rendszer fejlesztéséhez és működéséhez nem szükségesek kereskedelmi szoftverkomponensek.
+
+- A rendszer fejlesztéséhez és működtetéséhez nem szükségesek kereskedelmi szoftverkomponensek.
+- A program egy SQLite adatbázist használ az adatok tárolására, amely helyileg, fájlként kerül létrehozásra.
 
 ### Hardver topológia
-A rendszer működtetéséhez olyan számítógép szükséges, amely rendelkezik legalább az alábbiakkal:
-- Windows 10 vagy Windows 11 operációs rendszer
-- Legalább 4 GB RAM, ajánlott 8 GB
-- Legalább 1 GHz-es processzor, ajánlott 2+ magos CPU
-- Helyi hálózati vagy internetkapcsolat, ha a MySQL adatbázis távoli gépen fut
+
+A rendszer működéséhez az alábbi minimális hardverkövetelmények szükségesek:
+
+- Operációs rendszer: Windows 10 vagy újabb
+- Processzor: Legalább 1 GHz-es órajelű, 2 magos CPU ajánlott
+- Memória: Minimum 4 GB RAM (ajánlott 8 GB)
+- Tárhely: Minimum 1 GB szabad lemezterület
+- Helyi hálózati kapcsolat a verziókezeléshez (GitHub használata esetén)
 
 ### Fizikai alrendszerek
-Kliens gépek:
-- Felhasználói oldalon Windows 10/11 operációs rendszerrel rendelkező számítógépek, amelyeken a WPF alkalmazás fut. A kliens közvetlenül kapcsolódik a szerver gépen elérhető MySQL adatbázishoz.
 
-Szerver (Host) gép:
-- A MySQL adatbázist kiszolgáló gép. Ez lehet egy különálló gép a hálózaton, vagy akár egy kliensgépen lokálisan futtatott adatbázis is. A szerver biztosítja az adatok központi tárolását és elérhetőségét.
+- **Kliens gépek**:  
+  - Felhasználói oldalon Windows 10/11 operációs rendszerrel rendelkező számítógépek, amelyeken a Java alkalmazás fut.
+  - Az alkalmazás helyileg futtatja az SQLite adatbázist.
+
+- **Szerver gép**:  
+  - Nincs külön szerver szükséglet, az alkalmazás és az adatbázis egy gépen működik.
 
 ### Fejlesztő eszközök
-- Visual Studio 2022 Community Edition – a WPF alkalmazás fejlesztésére
-- MySQL Workbench – az adatbázis tervezésére és kezelésére
-- MySQL Server – az adatbázis kiszolgálásához
-- MySQL Connector/NET – a WPF alkalmazás adatbáziskapcsolatához
-- Git + GitHub – verziókezeléshez
+
+- **Java Development Kit (JDK 17 vagy újabb)** – a Java alkalmazás fejlesztéséhez
+- **JavaFX** – a grafikus felület kialakításához
+- **SQLite** – az autók adatainak helyi tárolására
+- **Visual Studio Code** – fejlesztőkörnyezetként
+- **Git + GitHub** – verziókezeléshez és csapatmunkához
+
 
 ## 8. Architekturális terv
 
