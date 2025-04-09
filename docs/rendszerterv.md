@@ -7,30 +7,31 @@ A rendszer egy modern, digitális járműkereskedői megoldást kínál, amely s
 ### 2.1 Projektszerepkörök, felelőségek:
   * Üzleti szereplő:
 	  -   Megrendelő:
-		  -  Troll Ede
+		  -  Herbák Marcell
      
 ### 2.2 Projektmunkások és felelőségek:
    * Frontend és backend:
-     - Bodnár Máté
-     - Herbák Marcell
+     - Bobák Martin
+     - Horváth Medárd
    * Tesztelés:
-     - Bodnár Máté
-     - Herbák Marcell
+     - Bobák Martin
+     - Horváth Medárd
      
 ### 2.3 Ütemterv:
 
 |Funkció                  | Feladat                                | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
 |-------------------------|----------------------------------------|-----------|---------------|------------------------|------------------|---------------------|
 |Rendszerterv             |Megírás                                 |         1 |             1 |                      1 |                1 |                   1 |
-|Program                  |Prototípus elkészítése                  |         2 |             3 |                      3 |                2 |                   1 |
-|Program                  |Tesztelés                               |         3 |             1 |                      1 |                1 |                   1 |
+|Program                  |Prototípus elkészítése                  |         2 |             5 |                      5 |                3 |                   3 |
+|Program                  |Tesztelés                               |         3 |             2 |                      2 |                1 |                   1 |
 
 ### 2.4 Mérföldkövek:
-   *   05.10. Projekt elkezdése
-   *   05.11. Alap prototípus elkészítése
-   *   05.12. Végleges prototípus elkészítése
-   *   05.12. Tesztelés
-   *   05.13. Bemutatás és átadás
+   *   04.05. Projekt elkezdése
+   *   04.09. Dokumentáció elkészítése
+   *   04.11. Béta verzió elkészítése
+   *   04.12. Végleges prototípus elkészítése
+   *   04.12. Tesztelés
+   *   04.13. Bemutatás és átadás
 
 ## 3. Üzleti folyamatok modellje
 
