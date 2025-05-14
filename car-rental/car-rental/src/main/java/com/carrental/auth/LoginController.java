@@ -11,6 +11,11 @@ public class LoginController {
     @FXML private PasswordField pfPass;
     @FXML private Label lblMsg;
 
+    // Called by RegisterController after a successful sign-up
+    public void showMessage(String msg) {
+        lblMsg.setText(msg);
+    }
+
     @FXML private void onLogin(ActionEvent e) {
         if (DbUtil.checkCredentials(tfUser.getText(), pfPass.getText())) {
             lblMsg.setText("✔ Welcome!");
