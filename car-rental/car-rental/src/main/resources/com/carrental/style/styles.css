@@ -1,0 +1,36 @@
+/* A light, minimalist background */
+.root {
+  -fx-background-color: #F5F5F5;
+  -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Center content in the VBox */
+.vbox {
+  -fx-alignment: center;
+  -fx-spacing: 12;
+  -fx-padding: 20;
+}
+
+/* Uniform, moderate-width inputs */
+.text-field, .password-field {
+  -fx-pref-width: 200px;
+  -fx-font-size: 14px;
+}
+
+/* Tweak buttons */
+.button {
+  -fx-font-size: 13px;
+  -fx-background-color: transparent;
+  -fx-border-color: #888;
+  -fx-border-radius: 4;
+  -fx-padding: 6 12;
+}
+.button:hover {
+  -fx-background-color: #EEE;
+}
+
+/* Message label style */
+.label {
+  -fx-font-size: 12px;
+  -fx-text-fill: #666;
+}

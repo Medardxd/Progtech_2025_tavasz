@@ -7,15 +7,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox xmlns="http://javafx.com/javafx/24.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.carrental.auth.RegisterController"
-      alignment="CENTER" spacing="12" prefWidth="300" prefHeight="200">
+      styleClass="vbox"
+      spacing="12" alignment="CENTER" prefWidth="300" prefHeight="200">
+
     <Label text="Register" style="-fx-font-size:18px;"/>
     <TextField fx:id="tfUser" promptText="Username"/>
     <PasswordField fx:id="pfPass" promptText="Password"/>
+
     <HBox spacing="10">
         <Button text="Register" onAction="#onRegister"/>
         <Button text="Back"     onAction="#backToLogin"/>
     </HBox>
-    <Label fx:id="lblMsg" textFill="red"/>
+
+    <Label fx:id="lblMsg"/>
+
 </VBox>
