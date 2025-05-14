@@ -1,0 +1,28 @@
+package com.carrental.auth;
+
+import com.carrental.db.DbUtil;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+
+public class LoginController {
+    @FXML private TextField tfUser;
+    @FXML private PasswordField pfPass;
+    @FXML private Label lblMsg;
+
+    @FXML private void onLogin(ActionEvent e) {
+        if (DbUtil.checkCredentials(tfUser.getText(), pfPass.getText())) {
+            lblMsg.setText("✔ Welcome!");
+            // TODO: load main menu
+        } else {
+            lblMsg.setText("✖ Invalid credentials");
+        }
+    }
+
+    @FXML private void openRegister(ActionEvent e) throws Exception {
+        tfUser.getScene().setRoot(
+                FXMLLoader.load(getClass().getResource("/com/carrental/view/register.fxml"))
+        );
+    }
+}
