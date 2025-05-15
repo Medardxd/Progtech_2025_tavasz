@@ -24,6 +24,10 @@ public class MainMenuController {
     public void setLoggedInUserId(int userId) {
         this.loggedInUserId = userId;
     }
+    @FXML
+    public void initialize() {
+        loadCars();
+    }
     private void loadCars() {
         try (Connection conn = DriverManager.getConnection(DB_URL);
              Statement stmt = conn.createStatement();
