@@ -14,15 +14,20 @@ public class LoginController {
     @FXML private PasswordField pfPass;
     @FXML private Label lblMsg;
 
-    // Called by RegisterController after a successful sign-up
     public void showMessage(String msg) {
         lblMsg.setText(msg);
     }
 
     @FXML
     private void onLogin(ActionEvent e) {
-        if (DbUtil.checkCredentials(tfUser.getText(), pfPass.getText())) {
+        String username = tfUser.getText();
+        String password = pfPass.getText();
+
+        if (DbUtil.checkCredentials(username, password)) {
             try {
+                int userId = DbUtil.getUserIdByUsername(username);
+                LoggedInUser.setUserId(userId); // itt beállítjuk
+
                 Parent mainRoot = FXMLLoader.load(
                         getClass().getResource("/com/carrental/view/main-menu.fxml")
                 );
@@ -36,7 +41,8 @@ public class LoginController {
         }
     }
 
-    @FXML private void openRegister(ActionEvent e) throws Exception {
+    @FXML
+    private void openRegister(ActionEvent e) throws Exception {
         tfUser.getScene().setRoot(
                 FXMLLoader.load(getClass().getResource("/com/carrental/view/register.fxml"))
         );

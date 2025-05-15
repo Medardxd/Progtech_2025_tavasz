@@ -105,7 +105,7 @@ public class MainMenuController {
             ps.setString(1, start.toString());
             ps.setString(2, end.toString());
             ps.setInt(3, carID);
-            ps.setInt(4, loggedInUserId);
+            ps.setInt(4, LoggedInUser.getUserId());
             ps.setDouble(5, fullPrice);
             ps.executeUpdate();
         } catch (SQLException e) {

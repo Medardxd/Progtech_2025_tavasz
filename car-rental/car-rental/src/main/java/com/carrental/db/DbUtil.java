@@ -68,4 +68,21 @@ public final class DbUtil {
             return false;
         }
     }
+    public static int getUserIdByUsername(String username) {
+        int userId = -1;
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id FROM users WHERE username = ?")) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                userId = rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userId;
+    }
+    private static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL);
+    }
 }
