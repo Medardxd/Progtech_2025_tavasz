@@ -125,7 +125,7 @@ public class ReservationController {
 
         @Override
         public String toString() {
-            return String.format("🚗 %s %s (%s)\n📅 %s - %s\n💰 %.2f Ft",
+            return String.format("🚗 %s %s (%s)\n📅 %s - %s\n💰 %.2f $",
                     brand, model, plate, start, end, price);
         }
     }
