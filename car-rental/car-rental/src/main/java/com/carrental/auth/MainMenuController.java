@@ -91,6 +91,23 @@ public class MainMenuController {
             button.setDisable(true);
         }
     }
+
+    private void reserve(int carID, LocalDate start, LocalDate end, double fullPrice) {
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             PreparedStatement ps = conn.prepareStatement("""
+                 INSERT INTO rentals(startDate, endDate, carID, userID, fullPrice)
+                 VALUES(?,?,?,?,?)
+             """)) {
+            ps.setString(1, start.toString());
+            ps.setString(2, end.toString());
+            ps.setInt(3, carID);
+            ps.setInt(4, loggedInUserId);
+            ps.setDouble(5, fullPrice);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
     @FXML
     private void onLogout(ActionEvent e) {
