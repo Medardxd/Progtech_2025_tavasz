@@ -78,6 +78,20 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
+
+    private void updateTotal(DatePicker start, DatePicker end, double price, Label label, Button button) {
+        LocalDate s = start.getValue();
+        LocalDate e = end.getValue();
+        if (s != null && e != null && !e.isBefore(s)) {
+            long days = ChronoUnit.DAYS.between(s, e) + 1;
+            label.setText(String.format("Total: $%.2f", days * price));
+            button.setDisable(false);
+        } else {
+            label.setText("Total: $0.00");
+            button.setDisable(true);
+        }
+    }
+    
     @FXML
     private void onLogout(ActionEvent e) {
         try {
