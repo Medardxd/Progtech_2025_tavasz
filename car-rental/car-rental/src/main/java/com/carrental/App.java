@@ -12,7 +12,7 @@ public class App extends Application {
         Parent root = FXMLLoader.load(getClass().getResource(
                 "/com/carrental/view/login.fxml"));
 
-        Scene scene = new Scene(root, 300, 250);    // width=300, height=250
+        Scene scene = new Scene(root, 500, 350);    // width=300, height=250
         scene.getStylesheets().add(
                 getClass().getResource("/com/carrental/style/styles.css")
                         .toExternalForm()
@@ -20,7 +20,7 @@ public class App extends Application {
 
 
         stage.setScene(scene);
-        stage.setTitle("Car-Rental • Login");
+        stage.setTitle("Car-Rental");
         stage.setResizable(false);
         stage.show();
     }

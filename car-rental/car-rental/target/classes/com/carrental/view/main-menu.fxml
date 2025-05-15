@@ -8,11 +8,11 @@
 <VBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.carrental.auth.MainMenuController"
-      alignment="TOP_CENTER" spacing="10" prefWidth="400" prefHeight="600">
+      alignment="TOP_CENTER" prefWidth="500" prefHeight="400">
 
     <Label text="Available Cars" style="-fx-font-size:20px;"/>
 
-    <ScrollPane prefHeight="500" prefWidth="380" fitToWidth="true">
+    <ScrollPane prefHeight="700" prefWidth="580" fitToWidth="true">
         <content>
             <VBox fx:id="carListContainer"/>
         </content>
