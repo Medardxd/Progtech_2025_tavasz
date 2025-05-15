@@ -4,11 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.ScrollPane?>
 <VBox xmlns="http://javafx.com/javafx/24.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.carrental.auth.MainMenuController"
-      alignment="CENTER" spacing="20" prefWidth="400" prefHeight="300">
+      alignment="TOP_CENTER" spacing="10" prefWidth="400" prefHeight="600">
 
-    <Label text="Main Menu (placeholder)" style="-fx-font-size:20px;"/>
+    <Label text="Available Cars" style="-fx-font-size:20px;"/>
+
+    <ScrollPane prefHeight="500" prefWidth="380" fitToWidth="true">
+        <content>
+            <VBox fx:id="carListContainer" spacing="10" padding="10"/>
+        </content>
+    </ScrollPane>
+
     <Button text="Log Out" onAction="#onLogout"/>
 </VBox>

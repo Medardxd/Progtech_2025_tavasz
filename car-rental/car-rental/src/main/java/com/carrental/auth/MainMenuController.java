@@ -108,7 +108,7 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void onLogout(ActionEvent e) {
         try {
