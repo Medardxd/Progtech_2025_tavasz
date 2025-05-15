@@ -15,6 +15,16 @@ public final class DbUtil {
                   password TEXT NOT NULL
                 )
             """);
+            stmt.executeUpdate("""
+            CREATE TABLE IF NOT EXISTS cars(
+                carID INTEGER PRIMARY KEY AUTOINCREMENT,
+                licensePlate TEXT UNIQUE NOT NULL,
+                pricePerDay REAL NOT NULL,
+                brand TEXT NOT NULL,
+                model TEXT NOT NULL,
+                yearOfCreation INTEGER NOT NULL
+            )
+        """);
         } catch (SQLException e) {
             e.printStackTrace();
         }
