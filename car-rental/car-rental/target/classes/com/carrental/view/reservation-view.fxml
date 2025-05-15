@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.carrental.auth.ReservationController"
+      alignment="CENTER">
+
+    <Label text="🗓️ Foglalásaim" style="-fx-font-size: 20px;"/>
+
+    <ListView fx:id="reservationList" prefHeight="200" prefWidth="400"/>
+
+    <Button text="⬅ Vissza az autókhoz" onAction="#onBack"/>
+</VBox>

@@ -9,6 +9,7 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.carrental.auth.MainMenuController"
       alignment="TOP_CENTER" prefWidth="500" prefHeight="400">
+    <Button text="📋 Foglalásaim" onAction="#openReservations"/>
 
     <Label text="Available Cars" style="-fx-font-size:20px;"/>
 

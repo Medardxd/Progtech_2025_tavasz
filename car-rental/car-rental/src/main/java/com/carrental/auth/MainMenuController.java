@@ -112,6 +112,15 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void openReservations(ActionEvent e) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/carrental/view/reservation-view.fxml"));
+            ((javafx.scene.Node) e.getSource()).getScene().setRoot(root);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     @FXML
     private void onLogout(ActionEvent e) {
