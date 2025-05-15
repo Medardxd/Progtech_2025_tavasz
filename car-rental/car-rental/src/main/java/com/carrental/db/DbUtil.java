@@ -25,6 +25,18 @@ public final class DbUtil {
                 yearOfCreation INTEGER NOT NULL
             )
         """);
+            stmt.executeUpdate("""
+            CREATE TABLE IF NOT EXISTS rentals(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                startDate TEXT NOT NULL,
+                endDate TEXT NOT NULL,
+                carID INTEGER NOT NULL,
+                userID INTEGER NOT NULL,
+                fullPrice REAL NOT NULL,
+                FOREIGN KEY(carID) REFERENCES cars(carID),
+                FOREIGN KEY(userID) REFERENCES users(id)
+            )
+        """);
         } catch (SQLException e) {
             e.printStackTrace();
         }
