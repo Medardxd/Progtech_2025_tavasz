@@ -1,6 +1,9 @@
 package com.carrental.patterns;
-public class GPS extends RentalDecorator{
-    public GPS(Rental r){super(r);}
-    public double cost(){return super.cost()+10;}
-    public String details(){return super.details()+" +GPS";}
+
+
+// GPS.java
+public class GPS extends RentalDecorator {
+    public GPS(Rental r) { super(r); }
+    @Override public double cost()    { return inner.cost() + 10; }
+    @Override public String  details(){ return inner.details() + " +GPS"; }
 }

@@ -1,5 +1,6 @@
 package com.carrental.admin;
 
+import com.carrental.auth.User;
 import com.carrental.db.DbUtil;
 import com.carrental.model.*;
 import com.carrental.patterns.*;
@@ -49,7 +50,8 @@ public class AddRentalDialogController {
             int weeks = (int)Math.ceil((ChronoUnit.DAYS.between(s,e)+1)/7.0);
             PricingStrategy strat = (car.getType()==CarType.PREMIUM)? new PremiumStrategy()
                     : new StandardStrategy();
-            Rental r = new BasicRental(car, null, weeks, strat);
+            User dummy = new User(userId, "[admin-created]", false);
+            Rental r   = new BasicRental(car, dummy, s, e, strat);
             if(chkGPS.isSelected())  r = new GPS(r);
             if(chkIns.isSelected())  r = new Insurance(r);
 

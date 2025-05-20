@@ -7,7 +7,9 @@
       fx:controller="com.carrental.auth.MainMenuController"
       alignment="TOP_CENTER" spacing="10" prefWidth="500" prefHeight="400">
 
-    <Button text="📋 My Rentals" onAction="#openReservations"/>
+    <Button fx:id="btnMyRentals"
+            text="📋 My rentals"
+            onAction="#openReservations"/>
 
     <!-- admin toolbar -->
     <HBox spacing="10">

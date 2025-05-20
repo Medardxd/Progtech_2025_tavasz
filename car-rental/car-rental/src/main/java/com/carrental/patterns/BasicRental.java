@@ -1,15 +1,53 @@
 // BasicRental.java
 package com.carrental.patterns;
-import com.carrental.model.Car;
+
 import com.carrental.auth.User;
-public class BasicRental implements Rental{
-    private final Car car; private final User user; private final int weeks;
-    private final PricingStrategy strat;
-    public BasicRental(Car c,User u,int w,PricingStrategy s){
-        car=c;user=u;weeks=w;strat=s;
+import com.carrental.model.Car;
+import com.carrental.model.CarType;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class BasicRental implements Rental {
+
+    /* immutable state -------------------------------------------------- */
+    private final Car       car;
+    private final User      user;
+    private final LocalDate startDate, endDate;
+    private final PricingStrategy strategy;
+
+    public BasicRental(Car car, User user,
+                       LocalDate start, LocalDate end,
+                       PricingStrategy strategy) {
+        this.car = car; this.user = user;
+        this.startDate = start; this.endDate = end;
+        this.strategy = strategy;
     }
-    public double cost(){ return strat.price(car,weeks); }
-    public String details(){ return user.username()+" renting "+car.getModel()+" x"+weeks+"w"; }
-    public int weeks(){return weeks;} public Car car(){return car;} public User user(){return user;}
-    public void accept(RentalVisitor v){ v.visit(this); }
+
+    @Override
+    public double cost() {
+
+        int days = (int) (ChronoUnit.DAYS.between(startDate, endDate) + 1);
+
+        /* DAILY price first */
+        double base = days * car.getPricePerDay();
+
+        /* Strategy adds surcharge / discount */
+        base = strategy.apply(base, days, car.getType());
+
+        /* decorators (GPS / Insurance) are added later by wrapping */
+        return base;
+    }
+
+    @Override public String details() {
+        return user.username() + " renting "
+                + car.getModel() + " "
+                + startDate + " – " + endDate;
+    }
+
+    public void accept(RentalVisitor v) { v.visit(this); }
+    public Car       car()  { return car; }
+    public User      user() { return user; }
+    public LocalDate start(){ return startDate; }
+    public LocalDate end()  { return endDate; }
 }
