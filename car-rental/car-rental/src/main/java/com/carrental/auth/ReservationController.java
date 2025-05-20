@@ -2,6 +2,7 @@ package com.carrental.auth;
 
 
 import com.carrental.auth.LoggedInUser;
+import com.carrental.db.DbUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ public class ReservationController {
     @FXML
     private ListView<Reservation> reservationList;
 
-    private final String DB_URL = "jdbc:sqlite:car-rental.db";
+    private final String DB_URL = DbUtil.URL;
     private final ObservableList<Reservation> reservations = FXCollections.observableArrayList();
 
     @FXML
