@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static com.carrental.model.CarType.PREMIUM;
+import static com.carrental.model.CarType.STANDARD;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainMenuControllerTest {
@@ -18,7 +20,7 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 21);
         LocalDate end = LocalDate.of(2025, 5, 23);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, false, false,false);
+        double total = ctrl.calculateTotal(start, end, 20.0, false, false,STANDARD);
         assertEquals(60.0, total); // 3 nap * 20 = 60
     }
 
@@ -28,8 +30,8 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 21);
         LocalDate end = LocalDate.of(2025, 5, 23);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, true, true,true);
-        assertEquals(110.0, total);
+        double total = ctrl.calculateTotal(start, end, 20.0, true, true,PREMIUM);
+        assertEquals(97, total);
     }
 
     @Test
@@ -38,7 +40,7 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 23);
         LocalDate end = LocalDate.of(2025, 5, 21);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, false, false,false);
+        double total = ctrl.calculateTotal(start, end, 20.0, false, false,STANDARD);
         assertEquals(0.0, total);
     }
 
@@ -47,7 +49,7 @@ class MainMenuControllerTest {
         MainMenuController ctrl = new MainMenuController();
         LocalDate date = LocalDate.of(2025, 5, 21);
 
-        double total = ctrl.calculateTotal(date, date, 20.0, true, false,false);
+        double total = ctrl.calculateTotal(date, date, 20.0, true, false,STANDARD);
         assertEquals(30.0, total);
     }
 
