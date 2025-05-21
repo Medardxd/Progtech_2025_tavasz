@@ -18,7 +18,7 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 21);
         LocalDate end = LocalDate.of(2025, 5, 23);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, false, false);
+        double total = ctrl.calculateTotal(start, end, 20.0, false, false,false);
         assertEquals(60.0, total); // 3 nap * 20 = 60
     }
 
@@ -28,8 +28,8 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 21);
         LocalDate end = LocalDate.of(2025, 5, 23);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, true, true);
-        assertEquals(85.0, total);
+        double total = ctrl.calculateTotal(start, end, 20.0, true, true,true);
+        assertEquals(110.0, total);
     }
 
     @Test
@@ -38,7 +38,7 @@ class MainMenuControllerTest {
         LocalDate start = LocalDate.of(2025, 5, 23);
         LocalDate end = LocalDate.of(2025, 5, 21);
 
-        double total = ctrl.calculateTotal(start, end, 20.0, false, false);
+        double total = ctrl.calculateTotal(start, end, 20.0, false, false,false);
         assertEquals(0.0, total);
     }
 
@@ -47,7 +47,7 @@ class MainMenuControllerTest {
         MainMenuController ctrl = new MainMenuController();
         LocalDate date = LocalDate.of(2025, 5, 21);
 
-        double total = ctrl.calculateTotal(date, date, 20.0, true, false);
+        double total = ctrl.calculateTotal(date, date, 20.0, true, false,false);
         assertEquals(30.0, total);
     }
 

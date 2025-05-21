@@ -55,7 +55,7 @@ public class MainMenuController {
     /* =================================================================== */
     /*  BUILD “AVAILABLE CARS” LIST                                        */
     /* =================================================================== */
-    private void loadCars() {
+    public void loadCars() {
         carListContainer.getChildren().clear();
 
         final String sql = "SELECT * FROM cars";
@@ -119,18 +119,22 @@ public class MainMenuController {
                 btnReserve.setDisable(true);
 
                 /* ---- listeners that update price / enable reserve button ---------- */
-                dpStart.valueProperty().addListener((o,ov,nv) ->
+                dpStart.valueProperty().addListener((o, ov, nv) ->
                         updateTotal(dpStart, dpEnd, pricePerDay,
-                                lblTotal, btnReserve, chkGps, chkIns));
-                dpEnd.valueProperty().addListener((o,ov,nv) ->
+                                lblTotal, btnReserve, chkGps, chkIns, car.getType()));
+
+                dpEnd.valueProperty().addListener((o, ov, nv) ->
                         updateTotal(dpStart, dpEnd, pricePerDay,
-                                lblTotal, btnReserve, chkGps, chkIns));
-                chkGps.selectedProperty().addListener((o,ov,nv) ->
+                                lblTotal, btnReserve, chkGps, chkIns, car.getType()));
+
+                chkGps.selectedProperty().addListener((o, ov, nv) ->
                         updateTotal(dpStart, dpEnd, pricePerDay,
-                                lblTotal, btnReserve, chkGps, chkIns));
-                chkIns.selectedProperty().addListener((o,ov,nv) ->
+                                lblTotal, btnReserve, chkGps, chkIns, car.getType()));
+
+                chkIns.selectedProperty().addListener((o, ov, nv) ->
                         updateTotal(dpStart, dpEnd, pricePerDay,
-                                lblTotal, btnReserve, chkGps, chkIns));
+                                lblTotal, btnReserve, chkGps, chkIns, car.getType()));
+
 
                 /* booking --------------------------------------------- */
                 btnReserve.setOnAction(ev -> {
@@ -176,36 +180,52 @@ public class MainMenuController {
 
         } catch (SQLException ex) { ex.printStackTrace(); }
     }
-    public double calculateTotal(LocalDate startDate, LocalDate endDate, double dailyPrice, boolean gps, boolean insurance) {
+    public double calculateTotal(LocalDate startDate, LocalDate endDate, double dailyPrice, boolean gps, boolean insurance, CarType type) {
         if (startDate == null || endDate == null || endDate.isBefore(startDate)) {
             return 0.0;
         }
 
         long days = ChronoUnit.DAYS.between(startDate, endDate) + 1;
         double total = days * dailyPrice;
+        if (type == CarType.PREMIUM) {
+            total *= 1.2;
+        }
         if (gps) total += 10;
         if (insurance) total += 15;
+
+
         return total;
     }
+
+
     /* ---------- helper: live total ------------------------------------ */
     void updateTotal(DatePicker s, DatePicker e,
                      double daily,
                      Label lbl, Button btn,
-                     CheckBox gps, CheckBox ins) {
+                     CheckBox gps, CheckBox ins,
+                     CarType type) {
 
-        LocalDate a=s.getValue(), b=e.getValue();
-        if (a!=null && b!=null && !b.isBefore(a)) {
-            long days = ChronoUnit.DAYS.between(a,b)+1;
-            double tot = days*daily;
-            if(gps.isSelected()) tot+=10;
-            if(ins.isSelected()) tot+=15;
+        LocalDate a = s.getValue(), b = e.getValue();
+        if (a != null && b != null && !b.isBefore(a)) {
+            long days = ChronoUnit.DAYS.between(a, b) + 1;
+            double tot = days * daily;
+            if (type == CarType.PREMIUM) {
+                tot *= 1.2;
+            }
+            if (gps.isSelected()) tot += 10;
+            if (ins.isSelected()) tot += 15;
 
-            lbl.setText(String.format("Total: $%.2f",tot));
+
+
+            lbl.setText(String.format("Total: $%.2f", tot));
             btn.setDisable(false);
         } else {
-            lbl.setText("Total: $0.00"); btn.setDisable(true);
+            lbl.setText("Total: $0.00");
+            btn.setDisable(true);
         }
     }
+
+
 
     /* ---------- DB insert --------------------------------------------- */
     private void reserveToDB(int carID, LocalDate s, LocalDate e, double price)
