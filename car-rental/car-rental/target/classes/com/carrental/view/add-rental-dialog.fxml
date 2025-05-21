@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/24.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.carrental.admin.AddRentalDialogController"
+          styleClass="dialog-grid">
+
+    <Label text="User ID:"         GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfUserId"    GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Car:"             GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="cbCar"        prefWidth="200"
+              GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Start:"           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dpStart"    GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="End:"             GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dpEnd"      GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <CheckBox fx:id="chkGPS"       text="GPS (+10$) "
+              GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <CheckBox fx:id="chkIns"       text="Insurance (+15$)"
+              GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT"
+          GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button text="Add"    onAction="#onAdd"/>
+        <Button text="Cancel" onAction="#onCancel"/>
+    </HBox>
+</GridPane>

@@ -20,11 +20,16 @@ import java.time.temporal.ChronoUnit;
 public class MainMenuController {
 
     /* ---------- FXML –– public widgets -------------------------------- */
-    @FXML private VBox   carListContainer;
-    @FXML private Button addCarButton;
-    @FXML private Button addRentalButton;
-    @FXML private Button reportButton;
-    @FXML private Button btnMyRentals;
+    @FXML
+    VBox   carListContainer;
+    @FXML
+    Button addCarButton;
+    @FXML
+    Button addRentalButton;
+    @FXML
+    Button reportButton;
+    @FXML
+    Button btnMyRentals;
 
     /* ---------- JDBC --------------------------------------------------- */
     private static final String DB_URL = DbUtil.URL;
@@ -171,12 +176,22 @@ public class MainMenuController {
 
         } catch (SQLException ex) { ex.printStackTrace(); }
     }
+    public double calculateTotal(LocalDate startDate, LocalDate endDate, double dailyPrice, boolean gps, boolean insurance) {
+        if (startDate == null || endDate == null || endDate.isBefore(startDate)) {
+            return 0.0;
+        }
 
+        long days = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+        double total = days * dailyPrice;
+        if (gps) total += 10;
+        if (insurance) total += 15;
+        return total;
+    }
     /* ---------- helper: live total ------------------------------------ */
-    private void updateTotal(DatePicker s, DatePicker e,
-                             double daily,
-                             Label lbl, Button btn,
-                             CheckBox gps, CheckBox ins) {
+    void updateTotal(DatePicker s, DatePicker e,
+                     double daily,
+                     Label lbl, Button btn,
+                     CheckBox gps, CheckBox ins) {
 
         LocalDate a=s.getValue(), b=e.getValue();
         if (a!=null && b!=null && !b.isBefore(a)) {

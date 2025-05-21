@@ -34,3 +34,9 @@
   -fx-font-size: 12px;
   -fx-text-fill: #666;
 }
+
+.dialog-grid {
+  -fx-padding: 15;          /* 15 px on every side */
+  -fx-hgap:    10;          /* these two match the attributes you set */
+  -fx-vgap:    6;
+}

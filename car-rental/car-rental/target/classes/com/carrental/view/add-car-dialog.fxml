@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/24.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.carrental.admin.AddCarDialogController"
+          styleClass="dialog-grid">
+
+    <Label text="Brand:"           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfBrand"     GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Model:"           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfModel"     GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Plate:"           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfPlate"     GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Type:"            GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="cbType"       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Price / day:"     GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfPrice"     GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Year:"            GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="tfYear"      GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT"
+          GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button text="Add"     onAction="#onAdd"/>
+        <Button text="Cancel"  onAction="#onCancel"/>
+    </HBox>
+</GridPane>
